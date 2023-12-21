@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/index.css">
+    <script src="JS/index.js"></script>
+    <title>Transactions</title>
+</head>
+<body>
+    <div>
+        <form method="post" action="api/transaction/" enctype="application/x-www-form-urlencoded">
+        <select id = "month" placeholder="MM">
+            <option name="" value="" style="display:none;">MM</option>
+            <option name="January" value="Jan">January</option>
+            <option name="February" value="Feb">February</option>
+            <option name="March" value="Mar" selected>March</option>
+            <option name="April" value="Apr">April</option>
+            <option name="May" value="May">May</option>
+            <option name="June" value="Jun">June</option>
+            <option name="July" value="Jul">July</option>
+            <option name="August" value="Aug">August</option>
+            <option name="September" value="Sep">September</option>
+            <option name="October" value="Oct">October</option>
+            <option name="November" value="Nov">November</option>
+            <option name="December" value="Dec">December</option>
+          </select> 
+        </form>         
+    </div>
+
+    <ul> 
+        <% data.Products.forEach((item)=>{%> 
+            <li> 
+                <%=item.id%> <%=item.title%> <%=item.description%> <%=item.price%>
+                <%=item.category%> <%=item.sold%> <%=item.dateofSale%>
+            </li> 
+            <%});%> 
+    </ul>
+
+    <span> prev </span>     
+    <span> next </span>
+    
+</body>
+</html>
